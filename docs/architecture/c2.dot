@@ -1,0 +1,27 @@
+digraph C2 {
+    node [shape = record, style = filled];
+    label = "C2";
+
+    subgraph cluster_0 {
+        node [fillcolor = lightseagreen];
+        color = aquamarine3;
+        label = "Hosted application"
+
+        contract_storage_engine [label = "{Storage engine | webapp | rest API}"];
+        database [label = "{Contract database | mongodb | gg}"];
+
+        contract_storage_engine -> database [label = "Contracts"];
+    }
+
+    subgraph cluster_1 {
+        label = "CI"
+
+        publish_contract_job [label = "Publish contracts"];
+        gets_contract_job [label = "Gets contracts and
+checks comsumption"];
+
+        publish_contract_job -> contract_storage_engine [label = "rest"];
+        gets_contract_job -> contract_storage_engine [label = "rest"];
+    }
+
+}

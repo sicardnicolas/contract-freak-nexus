@@ -1,0 +1,42 @@
+digraph C1 {
+    node [shape = record, style = filled];
+
+    subgraph cluster_0 {
+        node [fillcolor = lightseagreen];
+        color = aquamarine3;
+        label = "Hosted application";
+
+        contract_testing_app [label = "{ Contract testing application API | Contract nexus | HTTP Json }"];
+    }
+
+    subgraph cluster_1 {
+        node [shape = circle];
+        label = "CI";
+
+        provider_workflow;
+        consumer_workflow;
+
+        provider_workflow -> publish_contract_job [label = "triggers"];
+        consumer_workflow -> gets_contract_job [label = "triggers"];
+
+        subgraph cluster_10 {
+            node [fillcolor = lightseagreen];
+            label = "What we do"
+            color = aquamarine3;
+
+            publish_contract_job [label = "Publish contracts"];
+            gets_contract_job [label = "Gets contracts and
+checks comsumption"];
+
+            publish_contract_job -> contract_testing_app [label = "publish contracts"];
+            gets_contract_job -> contract_testing_app [label = "gets contracts"];
+        }
+    }
+
+    api [fillcolor = "lightblue", label = "{ API | Provider | HTTP Json}"];
+    api_consumer [fillcolor = "lightblue", label = "{ Web component | Consumer | HTTP }"];
+
+    api -> provider_workflow [label = "release"];
+
+    api_consumer -> consumer_workflow [label = "release"];
+}
