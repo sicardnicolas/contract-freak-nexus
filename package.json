@@ -4,6 +4,7 @@
   "description": "Contract Freak Nexus to manage API contracts",
   "main": "index.js",
   "scripts": {
+    "build": "tsc --build ./tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ignore-path .eslintignore --ext .ts ../../src"
   },
