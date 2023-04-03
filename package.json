@@ -6,7 +6,10 @@
   "scripts": {
     "build": "tsc --build ./tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ignore-path .eslintignore --ext .ts ../../src"
+    "lint": "eslint --ignore-path .eslintignore --ext .ts ../../src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier --check .github/**/*.yml *.json src/**/*.ts *.md docs/**/*.md",
+    "prettier:fix": "npm run prettier -- --write"
   },
   "author": "Nicolas Sicard",
   "license": "LGPL-3.0-only",
