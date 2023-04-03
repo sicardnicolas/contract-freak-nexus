@@ -4,9 +4,9 @@ digraph C1 {
     subgraph cluster_0 {
         node [fillcolor = lightseagreen];
         color = aquamarine3;
-        label = "Hosted application";
+        label = "Contract Freak";
 
-        contract_testing_app [label = "{ Contract testing application API | Contract nexus | HTTP Json }"];
+        contract_testing_app [label = "{ Nexus | API | HTTP Json }"];
     }
 
     subgraph cluster_1 {
@@ -21,7 +21,7 @@ digraph C1 {
 
         subgraph cluster_10 {
             node [fillcolor = lightseagreen];
-            label = "What we do"
+            label = "Contract Freak"
             color = aquamarine3;
 
             publish_contract_job [label = "Publish contracts"];
