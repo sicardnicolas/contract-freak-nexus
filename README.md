@@ -1,4 +1,4 @@
-# Contract testing application
+# Contract Freak Nexus
 
 This application aims to provide means of storing and distributing API contracts 
 to test your consumption against said needed contracts.

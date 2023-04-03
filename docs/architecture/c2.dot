@@ -5,23 +5,22 @@ digraph C2 {
     subgraph cluster_0 {
         node [fillcolor = lightseagreen];
         color = aquamarine3;
-        label = "Hosted application"
+        label = "Contract Freak"
 
-        contract_storage_engine [label = "{Storage engine | webapp | rest API}"];
-        database [label = "{Contract database | mongodb | gg}"];
+        contract_storage_engine [label = "{ Nexus | webapp | rest API}"];
+        database [label = "{ Contract database | mongodb}"];
 
         contract_storage_engine -> database [label = "Contracts"];
     }
 
     subgraph cluster_1 {
-        label = "CI"
+        label = "Contract Freak CI"
 
         publish_contract_job [label = "Publish contracts"];
-        gets_contract_job [label = "Gets contracts and
-checks comsumption"];
+        gets_contract_job [label = "Gets contracts and \n
+            checks comsumption"];
 
         publish_contract_job -> contract_storage_engine [label = "rest"];
         gets_contract_job -> contract_storage_engine [label = "rest"];
     }
-
 }
