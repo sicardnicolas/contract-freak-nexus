@@ -20,6 +20,10 @@
     "rxjs": "7.8.0"
   },
   "devDependencies": {
+    "@cucumber-stories/cucumber-datatable": "3.0.0",
+    "@cucumber/cucumber": "8.11.1",
+    "@shelf/jest-mongodb": "4.1.7",
+    "@types/jest": "29.5.0",
     "@typescript-eslint/eslint-plugin": "5.57.0",
     "@typescript-eslint/parser": "5.57.0",
     "eslint": "8.37.0",
